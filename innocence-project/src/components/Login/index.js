@@ -1,19 +1,21 @@
 import * as B from "./style";
-import Login from './Login/Login';
+import Login from './auth/Auth';
 import Join from './Join/Join';
-function index (){
+import {Link,Route,Switch} from "react-router-dom";
+
+function index (Component){
     
     return(
         <B.BoxWrapper>
             <B.Content>
                 <B.TextContextWrapper>
-                    <a>INNOCENCE</a>
+                    <Link to='/'>INNOCENCE</Link>
                     <p>인생을 바꾸는 강의
                         <br></br>
                         대마고 강의
                     </p>
                 </B.TextContextWrapper>
-                <Join></Join>
+                <Component></Component>
             </B.Content>
         </B.BoxWrapper>
     );

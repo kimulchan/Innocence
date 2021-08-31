@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
 import * as M from "./style";
-
+import MainPage from "../MainPage";
 function index(){
     return(
+        <>
         <M.MenuWrapper>
             <div>
             <M.IconWrapper>
                 <p>INNOCENCE</p>
                 <M.LoginWrapper>
-                    <div>로그인</div>
-                    <div>회원가입</div>
+                    <Link to="/login/login">로그인</Link>
+                    <Link to="/login/join">회원가입</Link>
                 </M.LoginWrapper>
             </M.IconWrapper>
             <M.ButtonWrapper>
@@ -21,6 +23,8 @@ function index(){
             </div>
             
         </M.MenuWrapper>
+        <MainPage></MainPage>
+        </>
     )
 }
 export default index;

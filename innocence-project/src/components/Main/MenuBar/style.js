@@ -37,7 +37,7 @@ export const LoginWrapper= styled.div`
     width: 150px;
     display:flex;
 
-    & div{
+    & a{
         font-size: 12px;
         display:flex;
         font-weight: 600;
