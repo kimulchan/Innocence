@@ -1,7 +1,9 @@
 import { useState } from "react";
 import * as J from "./style";
 import join from "../../../utils/api/join" 
+import {useHistory} from 'react-router-dom';
 function Join (){
+    const history = useHistory();
     const [loginInfo,setLoginInfo]=useState({
         name:"",
         student_id:"",
@@ -15,6 +17,7 @@ function Join (){
             [name]:value
         })
     }
+
     const infoList=[{
             name:"name",
             placeholder:"이름"
@@ -33,35 +36,34 @@ function Join (){
         }
     ]
 
-    
-    const upEvent=(e)=>{
-        const divE = e.target.previousSibling;
-        divE.style.transform="none"
-    }
-
-    const downEvent=(e)=>{
-        const divE = e.target.previousSibling;
-        if(!e.target.value){
-            divE.style.transform="translateY(100%) scale(1.2)"   
-        }   
-    }
-
-    
-    const infoMap = ({name,placeholder,type})=>{
+    const infoMap = (props,index)=>{
+        const {name,placeholder,type}=props;
+        
         return(
-            <J.InfoInput>
-                <div >{placeholder}</div>
-                <input name={name} type={type} onFocus={upEvent} onBlur={downEvent} onChange={changeInfo}></input>
+            
+            <J.InfoInput key={index}>
+                <div>{placeholder}</div>
+                <input name={name} type={type} onFocus={J.upEvent} onBlur={J.downEvent} onChange={changeInfo}></input>
             </J.InfoInput>
         )
     }
 
+    const submitInfo=()=>{
+        const {name,password,passwordCheck,student_id}=loginInfo;
+        if(password!==passwordCheck){
+            alert("비밀번호가 서로 다릅니다 !");
+        }
+        join.postJoin(name,student_id,password).then(()=>{
+            alert("회원가입에 성공하셨습니다");
+            history.push('/');
+        })
+    }
     
     return (<>
         <J.InfoBox>
             {infoList.map(infoMap)}
         </J.InfoBox>
-        <J.Submit onClick={join.postJoin()}>회원가입</J.Submit>
+        <J.Submit onClick={submitInfo}>회원가입</J.Submit>
         </>
     )
 }

@@ -43,3 +43,14 @@ export const Submit= styled.button`
     outline: none;
     
 `
+export const upEvent=(e)=>{
+    const divE = e.target.previousSibling;
+    divE.style.transform="none"
+}
+
+export const downEvent=(e)=>{
+    const divE = e.target.previousSibling;
+    if(!e.target.value){
+        divE.style.transform="translateY(100%) scale(1.2)"   
+    }   
+}

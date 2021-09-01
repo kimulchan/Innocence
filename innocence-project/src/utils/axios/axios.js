@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL:"http://rollbook.kro.kr:4200/"
+    baseURL:"http://10.220.158.125:4090"
 })
 
-instance.request.use(
+instance.interceptors.request.use(
     function (config){
         //요청 성공 직전 호출된다 
         //axios 설정값을 넣는다 
@@ -25,3 +25,4 @@ instance.interceptors.response.use(
         return Promise.reject(error);
     }
 )
+export default instance;

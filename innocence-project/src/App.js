@@ -1,6 +1,6 @@
 import { GlobalStyle } from "./styles/GlobalStyle";
-import MenuBar from './components/Main/MenuBar';
-import MainPage from './components/Main/MainPage'
+import MenuBar from './components/Main/MenuBar/MenuBar';
+import MainPage from './components/Main/MainPage/MainPage'
 import Join from './components/Login/Join/Join'
 import TestReducer from "./TestReducer";
 import Auth from "./components/Login/auth/Auth";
@@ -17,6 +17,7 @@ function App() {
         <Route component={MainPage} path="/" exact></Route>
         <Route component={()=>Login(Auth)} path="/login/login"></Route>
         <Route component={()=>Login(Join)}></Route>
+        <Route component={Login}></Route>
       </Switch>
         
       </BrowserRouter>

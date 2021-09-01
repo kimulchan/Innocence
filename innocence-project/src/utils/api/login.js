@@ -6,9 +6,10 @@ export default{
             url:'/user/login',
             method:'post',
             data:{
-               student_id: studentId,
+               uid: studentId,
                password:password
             }
         })
     }
+    
 }

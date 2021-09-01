@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import * as M from "./style";
-import MainPage from "../MainPage";
-function index(){
+import MainPage from "../MainPage/MainPage";
+import {useEffect,useState} from 'react';
+
+function MenuBar()
+{
+    const [menu,setMenu]=useState(['frontEnd','backend']);
+    
+    const mapDiv=(prop,index)=>{
+        return <div key={index}>{prop}</div>
+    }
     return(
         <>
         <M.MenuWrapper>
@@ -14,17 +22,12 @@ function index(){
                 </M.LoginWrapper>
             </M.IconWrapper>
             <M.ButtonWrapper>
-                <div>강의 목록</div>
-                <div>강의 목록</div>
-                <div>강의 목록</div>
-                <div>강의 목록</div>
-                <div>강의 목록</div>
+                {menu.map(mapDiv)}
             </M.ButtonWrapper>
             </div>
-            
         </M.MenuWrapper>
         <MainPage></MainPage>
         </>
     )
 }
-export default index;
+export default MenuBar;

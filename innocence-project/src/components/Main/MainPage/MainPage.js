@@ -1,11 +1,10 @@
 import * as P from "./style";
 
-function index (){
+function MainPage(){
     return (
         <>
             <P.TestPage></P.TestPage>
-        
         </>
     )
 }
-export default index;
+export default MainPage;
