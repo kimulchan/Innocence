@@ -6,12 +6,13 @@ import TestReducer from "./TestReducer";
 import Auth from "./components/Login/auth/Auth";
 import Login from "./components/Login";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import Lecture from "./components/Lecture";
+import Video from "./components/Video";
 function App() {
   return (
     <>
      <GlobalStyle></GlobalStyle> 
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Switch>
         <Route component={MenuBar} path="/" exact></Route>
         <Route component={MainPage} path="/" exact></Route>
@@ -20,8 +21,8 @@ function App() {
         <Route component={Login}></Route>
       </Switch>
         
-      </BrowserRouter>
-     
+      </BrowserRouter> */}
+      <Video></Video>
     </>
   );
 }
