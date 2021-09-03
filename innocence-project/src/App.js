@@ -1,28 +1,10 @@
 import { GlobalStyle } from "./styles/GlobalStyle";
-import MenuBar from './components/Main/MenuBar/MenuBar';
-import MainPage from './components/Main/MainPage/MainPage'
-import Join from './components/Login/Join/Join'
-import TestReducer from "./TestReducer";
-import Auth from "./components/Login/auth/Auth";
-import Login from "./components/Login";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Lecture from "./components/Lecture";
-import Video from "./components/Video";
+import UserRouter from "./Route/userRouter"
 function App() {
   return (
     <>
-     <GlobalStyle></GlobalStyle> 
-      {/* <BrowserRouter>
-      <Switch>
-        <Route component={MenuBar} path="/" exact></Route>
-        <Route component={MainPage} path="/" exact></Route>
-        <Route component={()=>Login(Auth)} path="/login/login"></Route>
-        <Route component={()=>Login(Join)}></Route>
-        <Route component={Login}></Route>
-      </Switch>
-        
-      </BrowserRouter> */}
-      <Video></Video>
+     <UserRouter></UserRouter> 
+     
     </>
   );
 }

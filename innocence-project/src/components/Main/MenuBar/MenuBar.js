@@ -17,8 +17,8 @@ function MenuBar()
             <M.IconWrapper>
                 <p>INNOCENCE</p>
                 <M.LoginWrapper>
-                    {/* <Link to="/login/login">로그인</Link>
-                    <Link to="/login/join">회원가입</Link> */}
+                    <Link >로그인</Link>
+                    <Link >회원가입</Link>
                 </M.LoginWrapper>
             </M.IconWrapper>
             <M.ButtonWrapper>
