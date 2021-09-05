@@ -1,9 +1,10 @@
 import axios from "axios";
-
+import { getCookie } from "../cookie/cookie";
 const instance = axios.create({
     baseURL:"http://10.220.158.125:4090"
+    
 })
-
+instance.defaults.headers.common['Authorization']=getCookie('token');
 instance.interceptors.request.use(
     function (config){
         //요청 성공 직전 호출된다 
