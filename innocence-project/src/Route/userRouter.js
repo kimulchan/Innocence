@@ -5,11 +5,13 @@ function UserRouter(){
     return (
         <BrowserRouter>
             <Switch>
-                <Route component ={R.Main} path="/" exact/>
-                <Route component ={R.Lecture} path="/lecture"/>
-                <Route component ={R.Video} path = "/video"/>
-                <Route component={R.Login} path="/login"/>
                 
+                <Route component ={R.Main}  path="/" exact/>
+                <Route component ={R.Lecture} path="/lecture/:category"/>
+                <Route component ={R.Lecture} path="/lecture/:category/:language"/>
+                <Route component ={R.Video} path = "/video"/>
+                <Route component={R.Login} path="/login/:component"/>
+                <Route component= {R.AddBorder} path="/admin/addborder"/>
             </Switch>
         </BrowserRouter>
     )
