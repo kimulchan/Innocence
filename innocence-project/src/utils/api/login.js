@@ -1,9 +1,9 @@
 import request from '../axios/axios';
 
 export default{
-    postLogin (studentId,password){
+    postLogin ({studentId,password}){
         return request({
-            url:'/user/login',
+            url:'/auth/login',
             method:'post',
             data:{
                uid: studentId,

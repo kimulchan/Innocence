@@ -3,6 +3,7 @@ import * as J from '../Join/style';
 import login from '../../../utils/api/login';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import { removeCookies, setCookie } from '../../../utils/cookie/cookie';
 function Login(){
     const history= useHistory();
     const [loginInfo, setLoginInfo]=useState({
@@ -10,9 +11,17 @@ function Login(){
         password:""
     })
    const onLogin =()=>{
+       const {student_id, password}=loginInfo;
         login.postLogin({
-            ...loginInfo
-        }).then(()=>{
+            studentId:student_id,
+            password:password
+        }).then((res)=>{
+            setCookie('token',res.data.accessToken,{
+                path:"/",
+                secure:true,
+                sameSite:'none'
+            })
+            setTimeout(removeCookies('token'),)
             alert("로그인 성공!");
             history.push('/');
         }).catch(()=>{

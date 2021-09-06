@@ -52,10 +52,13 @@ function Join (){
         const {name,password,passwordCheck,student_id}=loginInfo;
         if(password!==passwordCheck){
             alert("비밀번호가 서로 다릅니다 !");
+            return;
         }
         join.postJoin(name,student_id,password).then(()=>{
             alert("회원가입에 성공하셨습니다");
             history.push('/');
+        }).catch(()=>{
+            alert("회원가입에 실패하셨습니다")
         })
     }
     

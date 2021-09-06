@@ -1,10 +1,22 @@
 import * as B from "./style";
 import Login from './auth/Auth';
 import Join from './Join/Join';
-import {Link,Route,Switch} from "react-router-dom";
+import {Link,Redirect} from "react-router-dom";
+import AddBorder from "../Admin/AddBorder";
 
-function index (Component){
-    
+function index ({match}){
+    const {component} = match.params;
+    const Component=()=>{
+        if(component=="login")return <Login></Login>;
+        else if (component == "join") return <Join></Join>;
+        else if(component == 'addborder') {
+            return <AddBorder></AddBorder>
+        }
+        else {
+            return <Redirect to="/"></Redirect>
+
+        }
+    }
     return(
         <B.BoxWrapper>
             <B.Content>

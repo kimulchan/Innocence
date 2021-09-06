@@ -8,7 +8,7 @@ export const BoxWrapper = styled.div`
 `
 
 export const Content = styled.div`
-    width:350px;
+    width:450px;
     padding: 60px 40px ;
     border: 1px solid #dddddd;
     margin: 50px 0;

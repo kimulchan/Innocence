@@ -37,7 +37,7 @@ export const LoginWrapper= styled.div`
     width: 150px;
     display:flex;
 
-    & a{
+    & a,div{
         font-size: 12px;
         display:flex;
         font-weight: 600;
@@ -55,19 +55,36 @@ export const ButtonWrapper=styled.div`
     height:36px;
     width:70%;
     display: flex;
-    & div{
+    & > div{
         min-width:75px;
         width: auto;
         height:100%;
         display: flex;
         align-items:center;
-        padding-right: 20px;
+        padding-right: 40px;
         font-size: 14px;
         font-weight: 600;
-        &:hover{
-          color:red;
-          cursor: pointer;  
+        & >a :hover{
+            cursor:pointer;
+            color: red;
+                
         }
+        & > ul{
+            display:none;
+        }
+        
+    }
+    
+`
+export const HoverBar = styled.ul`
+    position:absolute;
+    top: 108px;
+    width:140px;
+    padding:12px 12px;
+    border:2px solid #5783c8;
+    
+    & li{
+        padding:10px 0;
     }
 `
 

@@ -1,14 +1,29 @@
+import board from '../../../utils/api/board';
 import * as L from './style';
+function LectureList ({match}){
 
-function LectureList (){
+    const {category,language} = match.params;
+    
+    const getList = ()=>{
+        board.getBoard(category,language).then((res)=>{
+            res.data.map(mapList);
+        })
+    }
+    
+    const mapList = ({lecture})=>{
+        return(
+            <L.LectureBox>
+                <L.LectureSubject>{category}</L.LectureSubject>
+                <L.LectureName>{lecture}</L.LectureName>
+            </L.LectureBox>
+        )
+    }
+
+    
     return (
         <L.LectureListWrapper>
             <L.SubjectName>frontEnd</L.SubjectName>
-            <L.LectureBox>
-                <L.LectureSubject>frontend</L.LectureSubject>
-                <L.LectureName>김민테의 JAVASCRIPT</L.LectureName>
-            </L.LectureBox>
-
+                {getList()}
         </L.LectureListWrapper>
     )
 }

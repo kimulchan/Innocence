@@ -1,9 +1,11 @@
 import { GlobalStyle } from "./styles/GlobalStyle";
 import UserRouter from "./Route/userRouter"
+import AdminBoard from "./components/Admin/AddBorder"
 function App() {
   return (
     <>
-     <UserRouter></UserRouter> 
+    <GlobalStyle></GlobalStyle>
+    <UserRouter></UserRouter>
      
     </>
   );

@@ -4,4 +4,5 @@ export { default as Auth}  from "./Login/auth/Auth";
 export { default as Join}  from "./Login/Join/Join";
 export { default as Lecture}  from "./Lecture";
 export { default as Login } from "./Login";
-
+export { default as AdminMainPage} from "./Admin/AdminMainPage";
+export { default as AddBorder} from "./Admin/AddBorder";
