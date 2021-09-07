@@ -19,10 +19,10 @@ function LectureList ({match}){
         )
     }
 
-    
+
     return (
         <L.LectureListWrapper>
-            <L.SubjectName>frontEnd</L.SubjectName>
+            <L.SubjectName>{category}{`${language?`/${language}`:""}`}</L.SubjectName>
                 {getList()}
         </L.LectureListWrapper>
     )

@@ -24,7 +24,7 @@ export const IconWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    & p{
+    & a{
         font-weight: 600;
         font-size: 20px;
         &:hover{

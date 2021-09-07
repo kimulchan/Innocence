@@ -54,6 +54,8 @@ function AddBorder (){
         })
     }
     if(!getIsAdmin("token")){
+        
+        
         return (
             <>
                 <Redirect to="/"></Redirect>

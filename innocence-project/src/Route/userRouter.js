@@ -3,17 +3,15 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 function UserRouter(){
     return (
-        <BrowserRouter>
+        
             <Switch>
-                
                 <Route component ={R.Main}  path="/" exact/>
-                <Route component ={R.Lecture} path="/lecture/:category"/>
                 <Route component ={R.Lecture} path="/lecture/:category/:language"/>
+                <Route component ={R.Lecture} path="/lecture/:category"/>
                 <Route component ={R.Video} path = "/video"/>
                 <Route component={R.Login} path="/login/:component"/>
                 <Route component= {R.AddBorder} path="/admin/addborder"/>
             </Switch>
-        </BrowserRouter>
     )
 }
 export default UserRouter;

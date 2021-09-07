@@ -15,6 +15,12 @@ export default {
         })
     },
     getBoard(category,language){
+        if(language===undefined){
+            return request({
+                url:`/board/${category}`,
+                method:"get"
+            })
+        }
         return request({
             url:`/board/${category}/${language}`,
             method:"get",

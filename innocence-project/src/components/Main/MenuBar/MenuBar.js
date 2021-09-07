@@ -29,7 +29,7 @@ function MenuBar()
         <M.MenuWrapper>
             <div>
             <M.IconWrapper>
-                <p>INNOCENCE</p>
+                <Link to="/">INNOCENCE</Link>
                 <M.LoginWrapper>
                     <IsLogin></IsLogin>
                 </M.LoginWrapper>
