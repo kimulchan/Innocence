@@ -1,20 +1,8 @@
-import { BrowserRouter, Redirect, Router, Switch } from "react-router-dom";
+
+import { Redirect, Route } from "react-router-dom";
 import { getIsAdmin } from "../utils/cookie/cookie";
-import * as R from "../components";
 
-function AdminRouter(){
-
-    if(!getIsAdmin('token')){
-        return <Redirect to='/'></Redirect>
-    }
-    return(
-        
-            <Switch>
-                <Router component={R.AddBorder} path="/admin/addborder"></Router>
-                <Router component={R.AddEtc} path="/admin/addetc"></Router>
-            </Switch>
-    )
-
+export function AdminRoute({Component,computedMatch}){
+    
+    return getIsAdmin('token')?<Component match={computedMatch}></Component>:<Redirect to='/'/>
 }
-
-export default AdminRouter;
