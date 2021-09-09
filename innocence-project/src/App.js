@@ -1,11 +1,11 @@
 import { GlobalStyle } from "./styles/GlobalStyle";
-import AllRouter from "./Route";
+import Redux from "./redux";
 
 function App() {
   return (
     <>
     <GlobalStyle></GlobalStyle>
-    <AllRouter/>
+    <Redux/>
     </>
   );
 }

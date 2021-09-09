@@ -1,14 +1,18 @@
 import { Provider } from 'react-redux'
 import { createStore,combineReducers } from 'redux'
-
-import UserRouter from '../Route/userRouter';
-const rootReducer = combineReducers({});
+import categoryReducer from './reducer/category';
+import languageReducer from './reducer/language';
+import lectureReducer from './reducer/lectureReducer';
+import AllRouter from '../Route';
+const rootReducer = combineReducers({categoryReducer,languageReducer,lectureReducer});
 
 const store = createStore(rootReducer);
 const index=()=>{
     return (
         <Provider store={store}>
-            <UserRouter></UserRouter>
+            <AllRouter></AllRouter>
         </Provider>
     );
 }
+
+export default index;

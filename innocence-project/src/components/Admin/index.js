@@ -1,23 +1,24 @@
-import * as B from "./style";
-import Login from './auth/Auth';
-import Join from './Join/Join';
-import {Link,Redirect} from "react-router-dom";
-import AddBorder from "../Admin/AdminPage/AddBorder";
+import { Redirect,Link } from "react-router-dom";
+import * as B from "../Login/style";
+import AddBorder from "./AdminPage/AddBorder";
+import AddEtc from "./AdminPage/AddEtc";
 
 function index ({match}){
+    console.log(match);
     const {component} = match.params;
-    const Component=()=>{
-        if(component=="login")return <Login></Login>;
-        else if (component == "join") return <Join></Join>;
-        else if(component == 'addborder') {
+    function Component (){
+        if(component=="addborder"){
             return <AddBorder></AddBorder>
         }
+        else if (component == "addetc"){
+            return <AddEtc></AddEtc>
+        }
         else {
-            return <Redirect to="/"></Redirect>
-
+            return <Redirect to ="/"></Redirect>
         }
     }
-    return(
+
+    return (
         <B.BoxWrapper>
             <B.Content>
                 <B.TextContextWrapper>
@@ -30,7 +31,7 @@ function index ({match}){
                 <Component></Component>
             </B.Content>
         </B.BoxWrapper>
-    );
+    )
 }
 
 export default index;
