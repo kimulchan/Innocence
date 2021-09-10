@@ -3,8 +3,11 @@ import {useEffect, useState} from "react";
 import * as A from "./style";
 import { useDispatch, useSelector } from "react-redux";
 function AddBorder (){
+    useEffect(()=>{
+        console.log(state);
+    })
     const state = useSelector(state=>state);
-    console.log(state);
+    
     const optionMap =(prop)=>{
         return(
                 <option>{prop}</option>
@@ -14,7 +17,7 @@ function AddBorder (){
         const {categoryReducer,laguageReducer,lectureReducer}=state;
         return(
         <>
-        <A.SelectWrapper>    
+        {/* <A.SelectWrapper>    
             {categoryReducer.map(prop=>optionMap(prop))}
         </A.SelectWrapper>
         <A.SelectWrapper>
@@ -24,7 +27,7 @@ function AddBorder (){
         <A.SelectWrapper>
         
             {lectureReducer.map(prop=>optionMap(prop))}
-        </A.SelectWrapper>
+        </A.SelectWrapper> */}
         </>
         )
         

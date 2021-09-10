@@ -21,7 +21,6 @@ function Login(){
                 secure:true,
                 sameSite:'none'
             })
-            setTimeout(removeCookies('token'),)
             alert("로그인 성공!");
             history.push('/');
         }).catch(()=>{
