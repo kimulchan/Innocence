@@ -11,16 +11,16 @@ function MenuBar()
     const ButtonMap = (prop)=>{
         const {category,languageList}=prop
         return (
-            <div >
+            <M.ButtonWrapper>
                 <Link to={`/${category}`}>{category}</Link>
                 <M.HoverBar >
                     {languageList.map((language)=>{
                         return(
-                            <Link to={`/${category}/${language}`}>{language}</Link>
+                            <li><Link to={`/${category}/${language}`}>{language}</Link></li>
                         )
                     })}
                 </M.HoverBar>
-            </div>
+            </M.ButtonWrapper>
         )
        
     }
@@ -34,9 +34,8 @@ function MenuBar()
                     <IsLogin></IsLogin>
                 </M.LoginWrapper>
             </M.IconWrapper>
-            <M.ButtonWrapper>
-                
-            </M.ButtonWrapper>
+                {ButtonMap({category:"frontend",languageList:['css','html']})}
+            
             </div>
         </M.MenuWrapper>
         </>

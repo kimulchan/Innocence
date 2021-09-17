@@ -11,7 +11,7 @@ export default {
             password:password,   
             name:name,
             isAdmin:false 
-               }
+        }
     })
 }
 }

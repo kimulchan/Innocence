@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const MenuWrapper = styled.header`
     width: 100%;
     min-width: 960px;
-    height :108px;
+    height :98px;
     
     & > div{
         width: 100%;
         min-width: 960px;
-        padding: 13px 0 10px;
+        padding: 13px 0 0;
         display: flex;
         flex-direction: column;
         align-items:center;
@@ -55,7 +55,7 @@ export const ButtonWrapper=styled.div`
     height:36px;
     width:70%;
     display: flex;
-    & > div{
+    & > a{
         min-width:75px;
         width: auto;
         height:100%;
@@ -64,27 +64,31 @@ export const ButtonWrapper=styled.div`
         padding-right: 40px;
         font-size: 14px;
         font-weight: 600;
-        & >a :hover{
+        
+        &:hover{
             cursor:pointer;
             color: red;
-                
+            & + ul{
+                display:block;
+            }
         }
-        & > ul{
-            display:none;
-        }
+        
         
     }
     
 `
 export const HoverBar = styled.ul`
     position:absolute;
-    top: 108px;
+    top: 98px;
     width:140px;
     padding:12px 12px;
     border:2px solid #5783c8;
-    
+    display:none;
     & li{
         padding:10px 0;
+    }
+    &:hover{
+        display: block;
     }
 `
 
